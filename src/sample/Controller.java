@@ -13,6 +13,14 @@ public class Controller {
     TextField sendMessageTextField;
 
     public void sendBtnClicked(ActionEvent actionEvent) {
+        sendMessage();
+    }
+
+    public void enterKeyPressed(ActionEvent actionEvent) {
+        sendMessage();
+    }
+
+    public void sendMessage() {
         mainTextArea.setText(mainTextArea.getText() + sendMessageTextField.getText() + "\n");
         sendMessageTextField.setText(null);
     }

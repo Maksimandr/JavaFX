@@ -3,31 +3,38 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<SplitPane dividerPositions="0.9" orientation="VERTICAL" prefHeight="500.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
-   <items>
-      <GridPane>
-        <columnConstraints>
-          <ColumnConstraints hgrow="ALWAYS" minWidth="100.0" prefWidth="600.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="100.0" prefHeight="300.0" vgrow="ALWAYS" />
-        </rowConstraints>
-         <children>
-            <TextArea fx:id="mainTextArea" editable="false" prefHeight="300.0" prefWidth="600.0" wrapText="true" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" />
-         </children>
-      </GridPane>
-      <GridPane>
-        <columnConstraints>
-          <ColumnConstraints hgrow="ALWAYS" minWidth="50.0" prefWidth="500.0" />
-          <ColumnConstraints maxWidth="-Infinity" minWidth="50.0" prefWidth="50.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="ALWAYS" />
-        </rowConstraints>
-         <children>
-            <TextField fx:id="sendMessageTextField" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="500.0" promptText="Введите сообщение" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" />
-            <Button fx:id="sendButton" defaultButton="true" mnemonicParsing="false" onAction="#sendBtnClicked" text="SEND" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" />
-         </children>
-      </GridPane>
-   </items>
+<!--Попробовал сплитпэйн для разнообразия, при изменении размера элементы растягиваются до нужного размера,
+отправляется по кнопке или Enter-->
+<SplitPane xmlns:fx="http://javafx.com/fxml/1" dividerPositions="0.9" orientation="VERTICAL" prefHeight="500.0"
+           prefWidth="600.0" fx:controller="sample.Controller">
+    <items>
+        <GridPane>
+            <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS" minWidth="100.0" prefWidth="600.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="100.0" prefHeight="300.0" vgrow="ALWAYS"/>
+            </rowConstraints>
+            <children>
+                <TextArea fx:id="mainTextArea" editable="false" prefHeight="300.0" prefWidth="600.0" wrapText="true"
+                          GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS"/>
+            </children>
+        </GridPane>
+        <GridPane>
+            <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS" minWidth="50.0" prefWidth="500.0"/>
+                <ColumnConstraints maxWidth="-Infinity" minWidth="50.0" prefWidth="50.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="ALWAYS"/>
+            </rowConstraints>
+            <children>
+                <TextField fx:id="sendMessageTextField" maxWidth="1.7976931348623157E308" prefHeight="25.0"
+                           prefWidth="500.0" promptText="Введите сообщение" GridPane.hgrow="ALWAYS"
+                           GridPane.vgrow="ALWAYS" onAction="#enterKeyPressed"/>
+                <Button fx:id="sendButton" mnemonicParsing="false" onAction="#sendBtnClicked"
+                        text="SEND" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS"/>
+            </children>
+        </GridPane>
+    </items>
 </SplitPane>
